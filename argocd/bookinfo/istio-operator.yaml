@@ -30,6 +30,13 @@ kind: Subscription
 metadata:
   name: jaeger-product
   namespace: openshift-operators
+pec:
+  channel: stable
+  installPlanApproval: Automatic
+  name: jaeger-product
+  source: redhat-operators
+  sourceNamespace: openshift-marketplace
+  startingCSV: jaeger-operator.v1.17.1
 ---
 apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
