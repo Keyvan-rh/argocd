@@ -30,7 +30,7 @@ kind: Subscription
 metadata:
   name: jaeger-product
   namespace: openshift-operators
-pec:
+spec:
   channel: stable
   installPlanApproval: Automatic
   name: jaeger-product
