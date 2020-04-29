@@ -9,4 +9,3 @@ spec:
   source: "redhat-operators" 
   sourceNamespace: "openshift-marketplace"
   name: "codeready-workspaces"
-  startingCSV: crwoperator.v2.1.1
