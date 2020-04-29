@@ -9,7 +9,7 @@ spec:
     cheFlavor: codeready
     devfileRegistryImage: ''
     pluginRegistryImage: ''
-    tlsSupport: true
+    tlsSupport: false
     selfSignedCert: false
   database:
     externalDb: false
