@@ -41,3 +41,22 @@ spec:
   selector:
     name: consumer-app
 ---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: iot
+  namespace: iot
+  labels:
+    app: iot-demo
+    app.kubernetes.io/instance: iot
+    name: consumer-app
+  annotations:
+    openshift.io/host.generated: 'true'
+spec:
+  to:
+    kind: Service
+    name: consumer-app
+    weight: 100
+  port:
+    targetPort: http
+  wildcardPolicy: None
