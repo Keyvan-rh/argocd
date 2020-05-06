@@ -5,6 +5,9 @@ metadata:
   labels:
     app: iot-demo
 spec:
+  selector:
+    matchLabels:
+      app: iot-demo
   replicas: 1
   template:
     metadata:
