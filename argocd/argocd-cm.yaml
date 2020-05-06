@@ -1,0 +1,29 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: argocd-cm
+  namespace: argocd
+  labels:
+    app.kubernetes.io/name: argocd-cm
+    app.kubernetes.io/part-of: argocd
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: >
+      {"apiVersion":"v1","kind":"ConfigMap","metadata":{"annotations":{},"labels":{"app.kubernetes.io/name":"argocd-cm","app.kubernetes.io/part-of":"argocd"},"name":"argocd-cm","namespace":"argocd"}}
+data:
+  dex.config: |
+    connectors:
+      # OpenShift
+      - type: openshift
+        id: openshift
+        name: OpenShift
+        config:
+          issuer: https://api.ocp4.keyvan.home:6443
+          clientID: system:serviceaccount:argocd:argocd-dex-server
+          clientSecret: <oc serviceaccounts get-token argocd-dex-server>
+          redirectURI: <echo https://$(oc get routes argocd -o=jsonpath='{ .spec.host }')/api/dex/callback > https://argocd-argocd.apps.ocp4.keyvan.home/api/dex/callback
+          insecureCA: true
+          groups:
+              - argocdusers
+              - argocdadmins
+  url: <echo https://$(oc get routes argocd -o=jsonpath='{ .spec.host }')> 'https://argocd-argocd.apps.ocp4.keyvan.home'
+
