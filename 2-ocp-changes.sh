@@ -4,8 +4,8 @@ echo "update argocd-cm and add the groups"
 echo "oc edit cm argocd-cm"
 echo " check the sample in arcgocd argocd-cm.yaml for section data and its values"
 oc adm groups new argocdusers
-oc adm groups new argocadmins
-oc adm groups add-users argocdadmin admin
+oc adm groups new argocdadmins
+oc adm groups add-users argocdadmins admin
 oc adm groups add-users argocdusers developer
 echo "update argocd-rbac-cmi and give users role"
 echo "oc edit cm argocd-rbac-cm"
