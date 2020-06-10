@@ -1,0 +1,18 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  creationTimestamp: '2020-06-09T15:47:24Z'
+  generation: 1
+  name: openshift-pipelines-operator-rh
+  namespace: openshift-operators
+  resourceVersion: '1884143'
+  selfLink: >-
+    /apis/operators.coreos.com/v1alpha1/namespaces/openshift-operators/subscriptions/openshift-pipelines-operator-rh
+  uid: 5bc4dfa5-5ead-4fa6-a3d2-8703c5e1e0ae
+spec:
+  channel: ocp-4.4
+  installPlanApproval: Automatic
+  name: openshift-pipelines-operator-rh
+  source: redhat-operators
+  sourceNamespace: openshift-marketplace
+  startingCSV: openshift-pipelines-operator.v1.0.1
