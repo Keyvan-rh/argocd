@@ -3,9 +3,8 @@ kind: Project
 metadata:
   name: catalog
   labels:
-    kiali.io/member-of: catalog
-    maistra.io/ignore-namespace: ignore
-    maistra.io/member-of: catalog
+    kiali.io/member-of: istio-system
+    maistra.io/member-of: istio-system
 spec:
   finalizers:
     - kubernetes
