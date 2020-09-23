@@ -9,7 +9,6 @@ metadata:
   name: basic-install
   namespace: istio-system
 spec:
-  version: v1.1
   istio:
     gateways:
       istio-egressgateway:
@@ -17,6 +16,14 @@ spec:
       istio-ingressgateway:
         autoscaleEnabled: false
         ior_enabled: false
+    global:
+      controlPlaneSecurityEnabled: false
+      mtls:
+        enabled: false
+    grafana:
+      enabled: true
+    kiali:
+      enabled: true
     mixer:
       policy:
         autoscaleEnabled: false
@@ -25,11 +32,9 @@ spec:
     pilot:
       autoscaleEnabled: false
       traceSampling: 100
-    kiali:
-      enabled: true
-    grafana:
-      enabled: true
     tracing:
       enabled: true
       jaeger:
         template: all-in-one
+  template: default
+  version: v1.1
