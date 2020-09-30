@@ -1,3 +1,11 @@
+apiVersion: v1
+kind: Project
+metadata:
+  name: greeter
+spec:
+  finalizers:
+    - kubernetes
+---
 apiVersion: serving.knative.dev/v1alpha1 # Current version of Knative
 kind: Service
 metadata:
