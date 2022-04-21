@@ -25,16 +25,16 @@
 #   kubectl apply -f samples/bookinfo/platform/kube/bookinfo.yaml -l account=reviews # reviews ServiceAccount
 #   kubectl apply -f samples/bookinfo/platform/kube/bookinfo.yaml -l app=reviews,version=v3 # reviews-v3 Deployment
 ##################################################################################################
-kind: Project
-apiVersion: project.openshift.io/v1
-metadata:
-  name: bookinfo
-  labels:
-    kiali.io/member-of: istio-system
-    maistra.io/member-of: istio-system
-spec:
-  finalizers:
-    - kubernetes
+# kind: Project
+# apiVersion: project.openshift.io/v1
+# metadata:
+#  name: bookinfo
+#  labels:
+#    kiali.io/member-of: istio-system
+#    maistra.io/member-of: istio-system
+#spec:
+#  finalizers:
+#    - kubernetes
 ---
 ##################################################################################################
 # Details service
